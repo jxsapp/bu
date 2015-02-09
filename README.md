@@ -9,7 +9,7 @@ Bu 一个Android开发的生产库，主要有以下几个部分构成：
   3.Fragment   --BuFragment
   
 二、数据库组件
-  1.DataBase   --BuDB,BuAuthorityProvider
+  1.DataBase   --BuInfoDB,BuAuthorityProvider
       示例：
 
 三、网络通信组件
