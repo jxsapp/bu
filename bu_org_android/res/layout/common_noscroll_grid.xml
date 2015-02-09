@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.bu.android.widget.NoScrollGridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/common_gridview"
+    style="@style/Bu_Scrolls"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:cacheColorHint="#00000000"
+    android:divider="@null"
+    android:listSelector="@null" />

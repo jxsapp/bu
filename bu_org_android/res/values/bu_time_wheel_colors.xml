@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="value_text_color">#FF333333</color>
+    <color name="items_text_color">#FFaaaaaa</color>
+    <color name="shadows_color_0">#00111111</color>
+    <color name="shadows_color_1">#00AAAAAA</color>
+    <color name="shadows_color_2">#00AAAAAA</color>
+    <color name="shadow_layer">#00C0C0C0</color>
+
+</resources>

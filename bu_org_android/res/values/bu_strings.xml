@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">bu_lib</string>
+    <string name="_blank"></string>
+    <string name="prompt_progress">进度</string>
+    <string name="prompt_setting">设置</string>
+    <string name="prompt_submit">提交</string>
+    <string name="prompt_back">返回</string>
+    <string name="prompt_close">关闭</string>
+    <string name="prompt_clear">清除</string>
+    <string name="prompt_to_load">加载</string>
+    <string name="prompt_to_stop">停止</string>
+    <string name="prompt_share">分享</string>
+    <string name="prompt_public">公开</string>
+    <string name="prompt_publish">发表</string>
+    <string name="prompt_send">发送</string>
+    <string name="prompt_send_invate">邀请</string>
+    <string name="prompt_save">保存</string>
+    <string name="prompt_new_create">新建</string>
+    <string name="prompt_next_page">下一页</string>
+    <string name="prompt_next_step">下一步</string>
+    <string name="prompt_filter">筛选</string>
+    <string name="prompt_edit">编辑</string>
+    <string name="prompt_more">更多</string>
+    <string name="prompt_modify">修改</string>
+    <string name="prompt_delete">删除</string>
+    <string name="prompt_add">添加</string>
+    <string name="prompt_X">"Ⅹ"</string>
+    <string name="prompt_create">创建</string>
+    <string name="prompt_go_on">继续</string>
+    <string name="prompt_silent">静音</string>
+    <string name="prompt_location">地点：</string>
+    <string name="prompt_history">历史</string>
+    <string name="prompt_reply">回复</string>
+    <string name="prompt_notepad">参与</string>
+    <string name="prompt_tip">提示</string>
+    <string name="prompt_overed">完成</string>
+    <string name="prompt_view_image">图片浏览</string>
+    <string name="prompt_group_send">群发</string>
+    <string name="prompt_watch">查看</string>
+    <string name="prompt_empty">无</string>
+    <string name="prompt_select">选择</string>
+    <string name="prompt_search">搜索</string>
+    <string name="prompt_query">查询</string>
+    <string name="prompt_confirm">确定</string>
+    <string name="prompt_quit">退出</string>
+    <string name="prompt_participate">参与</string>
+    <string name="prompt_join">加入</string>
+    <string name="prompt_mark">标注</string>
+    <string name="prompt_setup">安装</string>
+    <string name="prompt_cancel">取消</string>
+    <string name="prompt_call">呼叫</string>
+    <string name="prompt_sort">排序</string>
+    <string name="prompt_copy">复制</string>
+    <string name="prompt_select_date">日期选择</string>
+    <string name="prompt_year">年</string>
+    <string name="prompt_month">月</string>
+    <string name="prompt_day">日</string>
+    <string name="prompt_hour">时</string>
+    <string name="prompt_mins">分</string>
+    <string name="prompt_loading">加载中…</string>
+    <string name="prompt_wait">请稍后</string>
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+
+    <!--  -->
+    <string name="xlistview_header_hint_complete">刷新成功</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载…</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <!--  -->
+    <string name="update_down_load">软件下载</string>
+    <string name="update_title">软件升级</string>
+    <string name="update_lablel_current">当前版本</string>
+    <string name="update_lablel_new">最新版本</string>
+    <string name="update_loading">已下载 %1$s</string>
+    <string name="prompt_re_download">重新下载</string>
+
+</resources>

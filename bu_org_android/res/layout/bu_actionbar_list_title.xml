@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignWithParentIfMissing="true"
+    android:layout_centerVertical="true"
+    android:background="@null"
+    android:gravity="center_horizontal" >
+
+    <TextView
+        android:id="@+id/list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:ellipsize="marquee"
+        android:gravity="center_horizontal"
+        android:lines="1"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:minWidth="50dip"
+        android:paddingLeft="@dimen/Default_Padding_2x"
+        android:paddingRight="@dimen/Default_Padding_2x"
+        android:scrollHorizontally="true"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/LargeTextSize" />
+
+    <TextView
+        android:id="@+id/no_net_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/list_title"
+        android:contentDescription="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/BasicTextSize" />
+
+    <ImageView
+        android:id="@+id/list_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_title"
+        android:layout_toRightOf="@+id/no_net_work"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/Default_Padding"
+        android:paddingBottom="@dimen/Default_Padding"
+        android:src="@drawable/translate1x1" />
+
+    <ImageView
+        android:id="@+id/list_has_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/list_switch"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/translate1x1" />
+
+</RelativeLayout>

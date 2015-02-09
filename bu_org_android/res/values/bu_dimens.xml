@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <dimen name="SoSoSmallTextSize">8.0sp</dimen>
+    <dimen name="SoSmallTextSize">10.0sp</dimen>
+    <dimen name="SmallTextSize">12.0sp</dimen>
+    <dimen name="BasicTextSize">14.0sp</dimen>
+    <dimen name="TitleTextSize">16.0sp</dimen>
+    <dimen name="LargeTextSize">18.0sp</dimen>
+    <dimen name="SoLargeTextSize">20.0sp</dimen>
+    <dimen name="SoSoLargeTextSize">22.0sp</dimen>
+
+    <!--  -->
+    <dimen name="Default_Padding_1">1dip</dimen>
+    <dimen name="Default_Padding_2">2dip</dimen>
+    <dimen name="Default_Padding_3">3dip</dimen>
+    <dimen name="Default_Padding_4">4dip</dimen>
+    <dimen name="Default_Padding">5dip</dimen>
+    <dimen name="Default_Padding_2x">10dip</dimen>
+    <dimen name="Default_Padding_3x">15dip</dimen>
+    <dimen name="Default_Padding_4x">20dip</dimen>
+    <dimen name="Default_Padding_5x">25dip</dimen>
+    <dimen name="Default_Padding_6x">30dip</dimen>
+    <!--  -->
+
+    <dimen name="actionbar_height">55dip</dimen>
+    <dimen name="actionbar_item_height">45dip</dimen>
+    <dimen name="actionbar_item_width">68dip</dimen>
+    <!--  -->
+
+    <dimen name="bu_min_height_soxx_small">30dip</dimen>
+    <dimen name="bu_min_height_sox_small">35dip</dimen>
+    <dimen name="bu_min_height_so_small">40dip</dimen>
+    <dimen name="bu_button_min_height_small">45dip</dimen>
+    <dimen name="bu_button_min_height_small_50">50dip</dimen>
+    <dimen name="bu_button_min_height_small_2x">90dip</dimen>
+    <dimen name="bu_button_min_height">55dip</dimen>
+    <dimen name="bu_button_min_height_2x">100dip</dimen>
+
+</resources>

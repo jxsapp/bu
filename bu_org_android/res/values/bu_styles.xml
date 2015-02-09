@@ -1,0 +1,287 @@
+<!-- Copyright 2012 Square, Inc. -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.Basic" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- <item name="android:windowAnimationStyle">@style/Bu_Animation_Activity</item> -->
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <style name="Bu_Animation_Activity" parent="@android:style/Animation.Activity">
+
+        <!-- 第一个表示新的activity创建进入效果 -->
+        <item name="android:activityOpenEnterAnimation">@anim/lib_slide_left_in</item>
+        <!-- 第2个表示activity还没有finish()下退出效果 -->
+        <item name="android:activityOpenExitAnimation">@anim/lib_slide_left_out</item>
+        <!-- 第3个表示上一个activity返回进入效果 -->
+        <item name="android:activityCloseEnterAnimation">@anim/lib_slide_right_in</item>
+        <!-- 第4个表示的是activity finish()之后退出效果 -->
+        <item name="android:activityCloseExitAnimation">@anim/lib_slide_right_out</item>
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="IPone_Dialog_Bg" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:windowAnimationStyle">@style/Bu_Iphone_Alert_Anim</item>
+    </style>
+
+    <style name="Bu_Iphone_Alert_Anim">
+        <item name="android:windowEnterAnimation">@anim/fading_in</item>
+        <item name="android:windowExitAnimation">@anim/fading_out</item>
+    </style>
+
+    <style name="Bu_Pages" parent="@style/mh_v_auto_size">
+        <item name="android:background">@color/white</item>
+        <item name="android:id">@+id/root</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:layout_gravity">center_horizontal|center</item>
+    </style>
+
+    <style name="Bu_Scrolls" parent="@style/mh_v_auto_size">
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:layout_gravity">center_horizontal|center</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar_holo_dark</item>
+        <item name="android:fillViewport">true</item>
+        <item name="android:baselineAligned">false</item>
+    </style>
+
+    <style name="mh_v_auto_size">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="mh_auto_size">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="auto_size">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="pro_gress">
+        <item name="android:layout_width">32dip</item>
+        <item name="android:layout_height">32dip</item>
+        <item name="android:padding">@dimen/Default_Padding</item>
+    </style>
+
+    <style name="bu_line_item_icon">
+        <item name="android:padding">1dip</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:contentDescription">@string/app_name</item>
+    </style>
+
+    <style name="bu_label_value_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">2dip</item>
+        <item name="android:paddingRight">2dip</item>
+        <item name="android:maxHeight">@dimen/bu_button_min_height</item>
+        <item name="android:maxWidth">@dimen/bu_button_min_height</item>
+        <item name="android:textSize">@dimen/BasicTextSize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Bu_Pop_Menu_Anima">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="Bu_Pop_Title_Anima">
+        <item name="android:windowEnterAnimation">@anim/push_top_in</item>
+        <item name="android:windowExitAnimation">@anim/push_top_out</item>
+    </style>
+
+    <style name="Bu_Pop_Menu_Anima_Land">
+        <item name="android:windowEnterAnimation">@anim/lib_slide_left_in</item>
+        <item name="android:windowExitAnimation">@anim/lib_slide_right_out</item>
+    </style>
+
+    <style name="Loading_Dialog_Bg" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/Loding_Alert_Anim</item>
+    </style>
+
+    <style name="Loding_Alert_Anim">
+        <item name="android:windowEnterAnimation">@anim/fading_in</item>
+        <item name="android:windowExitAnimation">@anim/fading_out</item>
+    </style>
+
+    <style name="BackgroundOnly">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- <item name="android:windowNoDisplay">true</item> -->
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="Ptas_ActionBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/actionbar_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Ptas_ActionBarItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">5dip</item>
+        <item name="android:layout_marginRight">3dip</item>
+        <item name="android:paddingTop">5dip</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingRight">10dip</item>
+        <item name="android:textSize">@dimen/TitleTextSize</item>
+        <item name="android:textColor">@color/act_btn_color</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Ptas_ActionBarHomeItem" parent="@style/auto_size">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">@dimen/TitleTextSize</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">5dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Ptas_ActionBarHomeLogo">
+        <item name="android:layout_marginRight">1dip</item>
+        <item name="android:layout_marginLeft">0dip</item>
+    </style>
+
+    <style name="Ptas_ActionBarProgressBar" parent="@android:style/Widget.ProgressBar.Small" />
+
+    <style name="Ptas_Process" parent="@android:style/Widget.ProgressBar.Large.Inverse" />
+
+    <style name="Ptas_TextAppearance_Large" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="bu_setting_item_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/Default_Padding</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textColor">@color/black_color</item>
+        <item name="android:textSize">@dimen/BasicTextSize</item>
+    </style>
+
+    <style name="bu_setting_item_editable">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginRight">10.0dip</item>
+        <item name="android:src">@drawable/translate1x1</item>
+        <item name="android:contentDescription">@string/app_name</item>
+    </style>
+
+    <style name="bu_setting_line">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/bu_button_min_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="bu_setting_tip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+        <item name="android:padding">@dimen/Default_Padding</item>
+    </style>
+
+    <style name="bu_setting_text_blue" parent="@style/bu_setting_item_text">
+        <item name="android:layout_weight">0.5</item>
+    </style>
+
+    <style name="bu_setting_text_gray" parent="@style/bu_setting_item_text">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_weight">2.0</item>
+        <item name="android:textSize">@dimen/BasicTextSize</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_width">0.0dip</item>
+    </style>
+
+    <style name="Bu_Button" parent="@android:style/Widget.CompoundButton">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/bu_button_min_height</item>
+        <item name="android:textSize">@dimen/BasicTextSize</item>
+    </style>
+
+    <style name="Bu_Menu_Button" parent="@android:style/Widget.CompoundButton">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">55dip</item>
+        <item name="android:textColor">@color/wm_button</item>
+        <item name="android:background">@drawable/roundlist_body</item>
+        <item name="android:textSize">@dimen/LargeTextSize</item>
+    </style>
+
+    <style name="Bu_Menu_Button_White" parent="@style/Bu_Menu_Button" />
+
+    <style name="Bu_Menu_Button_Blue" parent="@style/Bu_Menu_Button">
+        <item name="android:background">@drawable/roundlist_body_green</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bu_Menu_Button_Red" parent="@style/Bu_Menu_Button">
+        <item name="android:background">@drawable/roundlist_body_red</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bu_Button_White" parent="@style/Bu_Button">
+        <item name="android:background">@drawable/roundlist_body</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Bu_Button_Blue" parent="@style/Bu_Button">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bu_Button_Red" parent="@style/Bu_Button">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Widget_ProgressBar_Horizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/ic_pregrs_drwable</item>
+        <item name="android:minHeight">@dimen/bu_button_min_height</item>
+        <item name="android:maxHeight">@dimen/bu_button_min_height</item>
+    </style>
+
+</resources>

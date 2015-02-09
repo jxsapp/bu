@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item type="drawable" name="blue_background">#ffecfbff</item>
+    <item type="drawable" name="black_background">#ff000000</item>
+    <item type="drawable" name="yellow_background">#fff8a52a</item>
+    <item type="drawable" name="red">#ffff0000</item>
+    <item type="drawable" name="gray">#ff666666</item>
+    <item type="drawable" name="green">#ff72ff00</item>
+    <item type="drawable" name="yellow">#ffffd801</item>
+    <item type="drawable" name="white">#ffffffff</item>
+    <item type="drawable" name="data_green">#ff009615</item>
+    <item type="drawable" name="data_yellow">#ffefa80e</item>
+    <item type="drawable" name="data_red">#fff21d00</item>
+    <item type="drawable" name="translate">#ff0000ff</item>
+    <item type="drawable" name="draft_blue">#ff007fea</item>
+    <item type="drawable" name="complete_translate">#00000000</item>
+    <item type="drawable" name="selector_transparent">#00000000</item>
+    <item type="drawable" name="twenty_perent_transparent">#cc000000</item>
+</resources>

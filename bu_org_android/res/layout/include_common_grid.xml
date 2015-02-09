@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/common_gridView"
+    style="@style/mh_v_auto_size"
+    android:layout_gravity="center"
+    android:background="@null"
+    android:cacheColorHint="#00000000"
+    android:gravity="center"
+    android:listSelector="@null"
+    android:numColumns="auto_fit"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    android:scrollbars="@null"
+    android:stretchMode="columnWidth" />

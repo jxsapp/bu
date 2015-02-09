@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pull_to_refresh_pull_label">下拉刷新…</string>
+    <string name="pull_to_refresh_release_label">松开刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在载入…</string>
+    <string name="push_to_refresh_pull_label">上推刷新</string>
+    <string name="pull_to_refresh_tap_label">点击刷新</string>
+    <string name="pull_to_refresh_time_label">更新时间：%1$s</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">上推刷新…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">松开刷新</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">正在载入…</string>
+    <string name="header_hint_refresh_normal">下拉刷新…</string>
+    <string name="header_hint_refresh_ready">松开刷新…</string>
+    <string name="header_hint_refresh_loading">正在载入…</string>
+    <string name="header_hint_refresh_time">更新时间：</string>
+    <string name="footer_hint_load_normal"></string>
+    <string name="footer_hint_load_ready">加载更多…</string>
+
+</resources>

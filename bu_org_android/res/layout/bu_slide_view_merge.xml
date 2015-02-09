@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/view_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundlist_click"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/option_bg"
+        android:layout_width="90dip"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:minWidth="80dip"
+        android:padding="@dimen/Default_Padding" >
+
+        <Button
+            android:id="@+id/option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/prompt_delete"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</merge>

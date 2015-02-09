@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    style="@style/mh_auto_size"
+    android:background="@null"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/menu_filters"
+        style="@style/auto_size"
+        android:layout_marginLeft="45dip"
+        android:layout_marginTop="2dip"
+        android:orientation="vertical" />
+
+</LinearLayout>

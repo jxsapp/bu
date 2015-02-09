@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="-2dip"
+    android:layout_marginRight="-2dip"
+    android:background="@drawable/roundlist_line"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/cancel_rl"
+        android:layout_width="0.0dip"
+        android:layout_height="45dip"
+        android:layout_weight="1.0" >
+
+        <Button
+            android:id="@+id/cancel"
+            style="@style/Bu_Button_White"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:minHeight="45dip"
+            android:minWidth="100dip"
+            android:text="@string/app_name"
+            android:textSize="@dimen/TitleTextSize" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/auto_size"
+        android:layout_width="1.0dip"
+        android:layout_height="45dip"
+        android:background="@color/round_line" />
+
+    <RelativeLayout
+        android:id="@+id/ok_rl"
+        android:layout_width="0.0dip"
+        android:layout_height="45dip"
+        android:layout_weight="1.0" >
+
+        <Button
+            android:id="@+id/confirm"
+            style="@style/Bu_Button_White"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:minHeight="45dip"
+            android:minWidth="100dip"
+            android:text="@string/app_name"
+            android:textSize="@dimen/TitleTextSize" />
+    </RelativeLayout>
+
+</LinearLayout>

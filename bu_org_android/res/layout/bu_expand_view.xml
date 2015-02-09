@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <org.bu.android.widget.ExpandableTextView
+        android:id="@+id/expandable_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.3"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/expandable_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/expandable_text"
+        android:background="@null"
+        android:paddingBottom="3dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/app_name"
+        android:textSize="@dimen/SmallTextSize" />
+
+</RelativeLayout>

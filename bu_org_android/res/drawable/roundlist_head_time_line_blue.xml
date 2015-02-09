@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:top="8.0dip">
+                <shape>
+                    <solid android:color="#ffbdbdbd" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <corners android:topLeftRadius="8.0dip" android:topRightRadius="8.0dip" android:bottomLeftRadius="1.0dip" android:bottomRightRadius="1.0dip" />
+                    <solid android:color="#ffbdbdbd" />
+                    <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <corners android:topLeftRadius="7.0dip" android:topRightRadius="7.0dip" android:bottomLeftRadius="1.0dip" android:bottomRightRadius="1.0dip" />
+                    <solid android:color="#ffb8dbf2" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item android:top="8.0dip">
+                <shape>
+                    <solid android:color="#ffbdbdbd" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <corners android:topLeftRadius="8.0dip" android:topRightRadius="8.0dip" android:bottomLeftRadius="1.0dip" android:bottomRightRadius="1.0dip" />
+                    <solid android:color="#ffbdbdbd" />
+                    <padding android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <corners android:topLeftRadius="7.0dip" android:topRightRadius="7.0dip" android:bottomLeftRadius="1.0dip" android:bottomRightRadius="1.0dip" />
+                    <solid android:color="#ffd2ecfc" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

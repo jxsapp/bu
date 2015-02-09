@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent_50">#50000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="red">#ffff0000</color>
+    <color name="orange">#ffe3432c</color>
+    <color name="white">#ffffffff</color>
+    <color name="white_50">#50ffffff</color>
+    <color name="white_a0">#a0ffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="black_50">#50000000</color>
+    <color name="black_a0">#a0000000</color>
+    <color name="lighter_gray">#ffcccccc</color>
+    <color name="light_gray">#ffbbbbbb</color>
+    <color name="med_gray">#ffd2d2d2</color>
+    <color name="gray">#ff666666</color>
+    <color name="dark_gray">#ff4d4d4d</color>
+    <color name="beige">#fff1eee9</color>
+    <color name="light_light_gray">#ffdddddd</color>
+    <color name="overlay_bg">#7f000000</color>
+    <color name="menu_settings_header_text">#ffc9beaa</color>
+    <color name="activity_bg">#fffafafa</color>
+    <color name="feed_item_bg">#fff2eee8</color>
+    <color name="feed_item_track">#ffe8e4dd</color>
+    <color name="cover_track">#7fffffff</color>
+    <color name="feed_subtext">#ffaea9a1</color>
+    <color name="bubble_item_divider">#fff7f6f5</color>
+    <!-- <color name="bubble_item_divider">#DB7093</color> -->
+
+    <color name="cover_text_shadow">#7f000000</color>
+    <color name="cover_time_shadow">#7f000000</color>
+    <color name="qa_bar_text_shadow">#ff7f1a13</color>
+    <color name="page_subtext">#ffada9a0</color>
+    <color name="page_tab_text_pressed">#ffffffff</color>
+    <color name="page_tab_shadow_pressed">#ff827f79</color>
+    <color name="page_tab_text_released">#ffaea9a1</color>
+    <color name="page_tab_shadow_released">#ffffffff</color>
+    <color name="permalink_item_bg">#fff2f2f2</color>
+    <color name="permalink_comment_location_text">#ffa2afbd</color>
+    <color name="permalink_comment_send_text">#ff9fa2a6</color>
+    <color name="emotion_picker_deluxe_avatar_blank">#7f666666</color>
+    <color name="emotion_picker_deluxe_text">#ff757575</color>
+    <color name="nux_blue_shadow">#ff0b36b7</color>
+    <color name="line_on_paper">#ffe6e6e6</color>
+    <color name="clear">#00000000</color>
+    <color name="feed_comment_button_text">#ffaea9a1</color>
+    <color name="feed_comment_button_text_shadow">#fffcfbfa</color>
+    <color name="feed_comment_button_text_pressed">#fff3f1ed</color>
+    <color name="feed_comment_button_text_shadow_pressed">#ffbfb8b1</color>
+    <color name="moment_dot_default">#ffcbc5bc</color>
+    <color name="moment_dot_thought">#ffcbc5bc</color>
+    <color name="moment_dot_music">#ffee9920</color>
+    <color name="moment_dot_place">#ff2772ce</color>
+    <color name="moment_dot_people">#ffffffff</color>
+    <color name="moment_ambient_dot_joined">#ffdb3825</color>
+    <color name="moment_ambient_dot_distance">#ff756c60</color>
+    <color name="moment_ambient_dot_asleep">#ff49098a</color>
+    <color name="moment_ambient_dot_awake">#fff5d318</color>
+    <color name="moment_ambient_dot_friend">#ffcbc5bc</color>
+    <color name="moment_ambient_dot_cover">#ffcbc5bc</color>
+    <color name="sleep_dialog_background">#ff0f041b</color>
+    <color name="sleep_dialog_time">#ff675475</color>
+    <color name="sleep_duration_message">#ff462e59</color>
+    <color name="list_item_catalog">#ff9c9c9c</color>
+    <color name="list_item_front">#ffffffff</color>
+    <color name="list_item_back">#ffc8c8c8</color>
+    <color name="list_v_line">#fff2c8ca</color>
+    <color name="wm_author_name">#ff4f849e</color>
+    <color name="wm_navi_bar_bg">#ffdedede</color>
+    <color name="wm_yellow">#ffff305b</color>
+    <color name="wm_amap_center_color">#30fd7356</color>
+    <color name="wm_yellow_p">#ffcc5f49</color>
+    <color name="wm_green">#ff00ba97</color>
+    <color name="wm_green_p">#ff22a178</color>
+    <color name="wm_gray">#ffc8c8c8</color>
+    <color name="wm_gray_eaeaea">#ffeaeaea</color>
+    <color name="blue_color">#ff34aadc</color>
+
+    <!-- 彩色字体 -->
+    <color name="red_light">#ffff4444</color>
+    <color name="green_light">#ff99cc00</color>
+    <color name="orange_light">#ffffbb33</color>
+    <color name="blue_light">#ff33b5e5</color>
+
+    <!-- 1.2版本颜色值 -->
+    <color name="v2_white_split">#50ffffff</color>
+    <color name="v2_menu_bg">#ff252931</color>
+    <color name="v2_option_bar_bg">#ff656565</color>
+    <color name="v2_matter_apps_bg">#ef656565</color>
+    <color name="v2_menu_item_p">#ff3b3f46</color>
+    <color name="v2_item_divider">#ff21252c</color>
+    <color name="v2_acts_divider">#50f95345</color>
+    <color name="v2_catalog">#fffafafa</color>
+    <color name="v2_gray">#ff959ca4</color>
+    <color name="v2_gray_86a3c0">#86a3c0</color>
+    <color name="v2_item_green">#ff3dd97f</color>
+    <color name="v2_cmt_comfir">#ff287faf</color>
+
+    <!--  -->
+    <color name="black_color">#ff333333</color>
+    <color name="round_line">#50d2d2d2</color>
+    <color name="toast_bg">#3f4245</color>
+
+</resources>

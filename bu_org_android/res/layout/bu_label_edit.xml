@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bu_setting_user_detail_name_rl"
+    style="@style/bu_setting_line"
+    android:background="@null"
+    android:padding="3dip" >
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/auto_size"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:gravity="center_vertical"
+        android:padding="@dimen/Default_Padding"
+        android:src="@drawable/translate1x1" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/bu_setting_item_text"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/icon"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/bu_button_min_height_small"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textColor="@color/black_color"
+        android:textSize="@dimen/BasicTextSize" />
+
+    <TextView
+        android:id="@+id/append"
+        style="@style/bu_setting_item_text"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/bu_button_min_height_small"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textColor="@color/black_color"
+        android:textSize="@dimen/BasicTextSize" />
+
+    <EditText
+        android:id="@+id/dis"
+        style="@style/mh_auto_size"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/Default_Padding"
+        android:layout_toLeftOf="@+id/append"
+        android:layout_toRightOf="@+id/label"
+        android:background="@null"
+        android:gravity="left|center_vertical"
+        android:lines="1"
+        android:maxLines="1"
+        android:minHeight="@dimen/bu_button_min_height_small"
+        android:minLines="1"
+        android:padding="3dip"
+        android:singleLine="true"
+        android:textColor="@color/black_color"
+        android:textSize="@dimen/BasicTextSize" />
+
+    <ImageButton
+        android:background="@null"
+        android:id="@+id/opt_iv"
+        style="@style/auto_size"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/Default_Padding"
+        android:src="@drawable/translate1x1" />
+
+</RelativeLayout>
