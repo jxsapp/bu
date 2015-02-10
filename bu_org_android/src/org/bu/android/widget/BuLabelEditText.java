@@ -63,8 +63,15 @@ public class BuLabelEditText extends RelativeLayout {
 		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis)) {
 			dis.setText(typedArray.getString(R.styleable.Bu_Label_Dis_Arrow_bu_dis));
 		}
+
+		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis_text_color)) {
+			dis.setTextColor(typedArray.getInt(R.styleable.Bu_Label_Dis_Arrow_bu_dis_text_color, R.color.black_color));
+		}
 		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis_hint)) {
 			dis.setHint(typedArray.getString(R.styleable.Bu_Label_Dis_Arrow_bu_dis_hint));
+		}
+		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis_gravity)) {
+			setDisGrvay(typedArray.getInt(R.styleable.Bu_Label_Dis_Arrow_bu_dis_gravity, -1));
 		}
 
 		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_arrow)) {

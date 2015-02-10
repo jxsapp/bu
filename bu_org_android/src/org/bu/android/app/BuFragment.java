@@ -9,10 +9,11 @@ import org.bu.android.widget.BuActionBar;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
-public class BuFragment extends Fragment {
+public class BuFragment extends Fragment implements View.OnTouchListener {
 
 	protected void softInputAdjustResize() {
 		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -22,6 +23,11 @@ public class BuFragment extends Fragment {
 		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 	}
 
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		return true;// 防止Fragment点击穿透
+	}
+
 	protected BuActionBar wmActionBar;
 
 	public void initBuBar(Bundle savedInstanceState, View rootView) {
@@ -29,6 +35,7 @@ public class BuFragment extends Fragment {
 	}
 
 	public void initBuBar(Bundle savedInstanceState, View rootView, boolean listener) {
+		rootView.setOnTouchListener(this);
 		wmActionBar = (BuActionBar) rootView.findViewById(R.id.actionbar);
 		if (null != wmActionBar) {
 			initBuBar(wmActionBar);

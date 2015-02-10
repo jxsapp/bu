@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
-import android.text.TextPaint;
 import android.text.InputFilter.LengthFilter;
+import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
@@ -52,6 +52,10 @@ public class BuLabelValueArrow extends RelativeLayout {
 
 		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis)) {
 			dis.setText(typedArray.getString(R.styleable.Bu_Label_Dis_Arrow_bu_dis));
+		}
+
+		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis_text_color)) {
+			dis.setTextColor(typedArray.getInt(R.styleable.Bu_Label_Dis_Arrow_bu_dis_text_color, R.color.black_color));
 		}
 
 		if (typedArray.hasValue(R.styleable.Bu_Label_Dis_Arrow_bu_dis_hint)) {

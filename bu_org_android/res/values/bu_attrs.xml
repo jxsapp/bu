@@ -32,6 +32,7 @@
         <attr name="bu_padding" format="dimension" />
         <attr name="bu_lable_text_color" format="reference|color" />
         <attr name="bu_dis_text_color" format="reference|color" />
+        <attr name="bu_dis_cursor_color" format="reference|color" />
         <attr name="bu_line_color" format="reference|color" />
         <attr name="bu_dis_gravity">
             <flag name="top" value="0x30" /> <!-- Push object to the top of its container, not changing its size. -->
