@@ -8,6 +8,7 @@
     <dimen name="TitleTextSize">16.0sp</dimen>
     <dimen name="LargeTextSize">18.0sp</dimen>
     <dimen name="SoLargeTextSize">20.0sp</dimen>
+    <dimen name="SoLargeTextSize_30">30.0sp</dimen>
     <dimen name="SoSoLargeTextSize">22.0sp</dimen>
 
     <!--  -->

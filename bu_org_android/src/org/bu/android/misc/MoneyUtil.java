@@ -1,4 +1,8 @@
 package org.bu.android.misc;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class MoneyUtil {
 
 	/** 大写数字 */
@@ -115,6 +119,19 @@ public class MoneyUtil {
 			return Integer.parseInt(subInteger) > 0;
 		} else {
 			return false;
+		}
+	}
+
+	public static String formatInt(String value) {
+		if (BuStringUtils.isEmpety(value)) {
+			return value;
+		}
+		NumberFormat nf = new DecimalFormat("#,###,###");
+		try {
+			double d = Double.valueOf(value);
+			return nf.format(d);
+		} catch (Exception e) {
+			return value;
 		}
 	}
 
