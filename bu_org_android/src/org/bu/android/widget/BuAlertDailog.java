@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class BuAlertDailog {
 
 	public static enum HIND_BTN_TYPE {
-		NULL, COMFIRM, CACEL;
+		NULL, COMFIRM, CACEL, EDIT;
 	}
 
 	static public abstract class BuAlertlListener {
