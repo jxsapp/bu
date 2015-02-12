@@ -35,7 +35,6 @@ public class BuFragment extends Fragment implements View.OnTouchListener {
 	}
 
 	public void initBuBar(Bundle savedInstanceState, View rootView, boolean listener) {
-		rootView.setOnTouchListener(this);
 		wmActionBar = (BuActionBar) rootView.findViewById(R.id.actionbar);
 		if (null != wmActionBar) {
 			initBuBar(wmActionBar);
