@@ -32,6 +32,7 @@
     <dimen name="bu_min_height_soxx_small">30dip</dimen>
     <dimen name="bu_min_height_sox_small">35dip</dimen>
     <dimen name="bu_min_height_so_small">40dip</dimen>
+    <dimen name="bu_min_height_so_small_2x">80dip</dimen>
     <dimen name="bu_button_min_height_small">45dip</dimen>
     <dimen name="bu_button_min_height_small_50">50dip</dimen>
     <dimen name="bu_button_min_height_small_2x">90dip</dimen>
