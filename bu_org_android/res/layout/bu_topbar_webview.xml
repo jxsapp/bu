@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/webview_extends_ll"
-        style="@style/mh_auto_size"
+        style="@style/mh_v_auto_size"
         android:orientation="vertical" />
 
 </LinearLayout>

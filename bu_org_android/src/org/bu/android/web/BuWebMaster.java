@@ -26,7 +26,6 @@ public interface BuWebMaster {
 
 	class BuWebLogic extends BuUILogic<BuActivity, BuWebViewHolder> implements IBuUI {
 
-
 		private String url = "";
 
 		BuWebLogic(BuActivity t, String url) {

@@ -2,13 +2,10 @@ package org.bu.android.web;
 
 import java.lang.ref.WeakReference;
 
-import org.bu.android.misc.BuScreenHolder;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.LayoutAlgorithm;
@@ -16,7 +13,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 @SuppressLint("SetJavaScriptEnabled")
-@SuppressWarnings("deprecation")
 public class WebViewHolder {
 
 	static public abstract class WebLoadingListener {
@@ -89,20 +85,11 @@ public class WebViewHolder {
 		ws.setJavaScriptEnabled(true);
 		ws.setBuiltInZoomControls(builtInZoomControls);
 		ws.setSupportZoom(supportZoom);
-		ws.setDefaultZoom(WebSettings.ZoomDensity.FAR);
 		ws.setCacheMode(WebSettings.LOAD_NO_CACHE);// 设置缓存模式
 		ws.setAllowFileAccess(true);
 		ws.setDomStorageEnabled(true);
 		ws.setLayoutAlgorithm(LayoutAlgorithm.NARROW_COLUMNS);
 
-		DisplayMetrics _dm = BuScreenHolder.matchParent(webview.getContext());
-		if (_dm.widthPixels <= 480) {
-			ws.setTextSize(WebSettings.TextSize.LARGEST);
-		}
-
-		// ws.setUseWideViewPort(true);
-		// ws.setLoadWithOverviewMode(true);
-		// webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 		webview.setVerticalScrollBarEnabled(false);
 		webview.setVerticalScrollbarOverlay(false);
 		webview.setHorizontalScrollBarEnabled(false);
@@ -122,7 +109,6 @@ public class WebViewHolder {
 		ws.setJavaScriptEnabled(true);
 		ws.setBuiltInZoomControls(false);
 		ws.setSupportZoom(false);
-		ws.setDefaultZoom(WebSettings.ZoomDensity.FAR);
 		ws.setCacheMode(WebSettings.LOAD_NO_CACHE);// 设置缓存模式
 		ws.setAllowFileAccess(true);
 		ws.setDomStorageEnabled(false);
