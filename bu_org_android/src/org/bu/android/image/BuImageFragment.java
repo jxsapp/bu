@@ -1,9 +1,7 @@
 package org.bu.android.image;
 
 import org.bu.android.R;
-import org.bu.android.widget.BuToast;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,20 +10,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 
 public class BuImageFragment extends Fragment {
 	private String mImageUrl;
+	private boolean onTouchFinish = false;
 	private ImageView mImageView;
 	private ProgressBar progressBar;
+	private TextView error_tv;
 
 	public static BuImageFragment newInstance(String imageUrl) {
+		return newInstance(imageUrl, true);
+	}
+
+	public static BuImageFragment newInstance(String imageUrl, boolean onTouchFinish) {
 		final BuImageFragment f = new BuImageFragment();
 
 		final Bundle args = new Bundle();
 		args.putString("url", imageUrl);
+		args.putBoolean("onTouchFinish", onTouchFinish);
 		f.setArguments(args);
 
 		return f;
@@ -38,7 +44,10 @@ public class BuImageFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mImageUrl = getArguments() != null ? getArguments().getString("url") : null;
+		if (null != getArguments()) {
+			mImageUrl = getArguments().getString("url");
+			onTouchFinish = getArguments().getBoolean("onTouchFinish");
+		}
 
 	}
 
@@ -46,14 +55,17 @@ public class BuImageFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final View v = inflater.inflate(R.layout.bu_image_browser_fragment, container, false);
 		mImageView = (ImageView) v.findViewById(R.id.image);
-		mImageView.setOnClickListener(new View.OnClickListener() {
+		if (onTouchFinish) {
+			mImageView.setOnClickListener(new View.OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				((Activity) v.getContext()).finish();
-			}
-		});
+				@Override
+				public void onClick(View v) {
+					getActivity().finish();
+				}
+			});
+		}
 		progressBar = (ProgressBar) v.findViewById(R.id.loading);
+		error_tv = (TextView) v.findViewById(R.id.error_tv);
 		return v;
 	}
 
@@ -65,6 +77,7 @@ public class BuImageFragment extends Fragment {
 			@Override
 			public void onLoadingStarted(String imageUri, View view) {
 				progressBar.setVisibility(View.VISIBLE);
+				error_tv.setVisibility(View.GONE);
 			}
 
 			@Override
@@ -72,7 +85,7 @@ public class BuImageFragment extends Fragment {
 				String message = null;
 				switch (failReason.getType()) {
 				case IO_ERROR:
-					message = "下载错误";
+					message = "图片不存在";
 					break;
 				case DECODING_ERROR:
 					message = "图片无法显示";
@@ -87,7 +100,8 @@ public class BuImageFragment extends Fragment {
 					message = "未知的错误";
 					break;
 				}
-				BuToast.show(message);
+				error_tv.setText(message);
+				error_tv.setVisibility(View.VISIBLE);
 				progressBar.setVisibility(View.GONE);
 			}
 

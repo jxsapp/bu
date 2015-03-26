@@ -45,13 +45,15 @@ public class BitmapCache extends Activity {
 
 		if (imageCache.containsKey(path)) {
 			SoftReference<Bitmap> reference = imageCache.get(path);
-			Bitmap bmp = reference.get();
-			if (bmp != null) {
-				if (callback != null) {
-					callback.imageLoad(iv, bmp, sourcePath);
+			if (null != reference) {
+				Bitmap bmp = reference.get();
+				if (bmp != null) {
+					if (callback != null) {
+						callback.imageLoad(iv, bmp, sourcePath);
+					}
+					iv.setImageBitmap(bmp);
+					return;
 				}
-				iv.setImageBitmap(bmp);
-				return;
 			}
 		}
 		iv.setImageBitmap(null);

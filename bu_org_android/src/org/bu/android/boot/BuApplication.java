@@ -82,7 +82,7 @@ public abstract class BuApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		application = this;
-		ImageLoaderHolder.init(application, R.drawable.default_yms_image);
+		ImageLoaderHolder.init(application, R.drawable.translate1x1);
 		CrashHolder.getInstance().init(application);
 		BuFileHolder.createDir();
 		mHandler = new Handler(application.getMainLooper(), new Handler.Callback() {
