@@ -80,4 +80,10 @@
     <string name="update_loading">已下载 %1$s</string>
     <string name="prompt_re_download">重新下载</string>
 
+    <!--  -->
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unknown">发送返回</string>
+
 </resources>
