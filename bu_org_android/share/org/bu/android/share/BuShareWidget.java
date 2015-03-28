@@ -59,17 +59,15 @@ public class BuShareWidget extends RelativeLayout implements OnItemClickListener
 		this.context = context;
 		inflater = LayoutInflater.from(context);
 		inflater.inflate(R.layout.wm_share_grid, this);
-		resetUI(true, true);
+		resetUI();
 	}
 
-	public void resetUI(boolean hasWeiMi, boolean hasTime) {
-		BuShareWidgetConversionHolder.getInstace().initEntry(hasTime);
-		targetAppInfoLists = BuShareWidgetConversionHolder.getInstace().targetAppInfoLists;
-		onCreate();
+	public void resetUI() {
+		resetUI(BuShareAppInfo.getShareList());
 	}
 
-	public void resetUINoHasTimeLine(boolean hasWeiMi) {
-		BuShareWidgetConversionHolder.getInstace().initEntry(false);
+	public void resetUI(List<BuShareAppInfo> appLists) {
+		BuShareWidgetConversionHolder.getInstace().initEntry(appLists);
 		targetAppInfoLists = BuShareWidgetConversionHolder.getInstace().targetAppInfoLists;
 		onCreate();
 	}

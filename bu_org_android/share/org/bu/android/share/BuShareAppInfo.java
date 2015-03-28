@@ -18,23 +18,15 @@ public class BuShareAppInfo {
 		this.targetAppDefine = targetAppDefine;
 	}
 
-	public static List<BuShareAppInfo> getShareList(boolean hasTimeLine) {
+	public static List<BuShareAppInfo> getShareList() {
 		List<BuShareAppInfo> targetAppInfos = new ArrayList<BuShareAppInfo>();
-
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.SMS));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.WECHAT));
-		if (hasTimeLine) {
-			targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.WECHAT_CMTS));
-		}
+		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.WECHAT_CMTS));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.QQ));
-		if (hasTimeLine) {
-			targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.QZONE));
-		}
+		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.QZONE));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.YIXIN));
-		if (hasTimeLine) {
-			targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.YIXIN_CMTS));
-		}
-
+		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.YIXIN_CMTS));
 		return targetAppInfos;
 	}
 

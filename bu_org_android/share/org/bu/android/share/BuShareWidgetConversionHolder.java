@@ -27,20 +27,25 @@ public class BuShareWidgetConversionHolder {
 		return Instance;
 	}
 
-	public void initEntry(boolean hasTimeLine) {
-		parseData(hasTimeLine);
+	public void initEntry() {
+		initEntry(BuShareAppInfo.getShareList());
+	}
+
+	public void initEntry(List<BuShareAppInfo> targetAppInfos) {
+		targetAppInfoLists.clear();
+		targetAppInfos.clear();
+		this.targetAppInfos = targetAppInfos;
+		parseData();
 	}
 
 	/**
 	 * 解析字符
+	 * 
 	 * @param data
 	 */
-	private void parseData(boolean hasTimeLine) {
-		targetAppInfoLists.clear();
-		targetAppInfos.clear();
-		targetAppInfos = BuShareAppInfo.getShareList(hasTimeLine);
-		int pageCount = (int) Math.ceil(targetAppInfos.size() / pageSize + 0.1);
+	private void parseData() {
 
+		int pageCount = (int) Math.ceil(targetAppInfos.size() / pageSize + 0.1);
 		for (int i = 0; i < pageCount; i++) {
 			targetAppInfoLists.add(getData(i));
 		}
