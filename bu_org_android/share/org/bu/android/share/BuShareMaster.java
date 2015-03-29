@@ -16,9 +16,13 @@ import org.bu.android.widget.BuMenuMaster.BuMenuListener;
 import org.bu.android.wxapi.WeiXinMaster;
 import org.bu.android.yxapi.YiXinMaster;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 
@@ -28,10 +32,36 @@ public interface BuShareMaster {
 		BuMenu weiMiMenu;
 	}
 
-	public abstract class BuShareListener implements PlatformActionListener {
+	public abstract class BuShareListener implements PlatformActionListener, BuShareWidget.OnTargetSelectedListener {
 		public abstract View getRootView();
 
-		public abstract View getMenus(BuMenu menu);
+		private Context mContext;
+		private BuMenu menu;
+
+		public BuShareListener(Context mContext) {
+			super();
+			this.mContext = mContext;
+		}
+
+		@SuppressLint("InflateParams")
+		public View getMenus(BuMenu menu) {
+			this.menu = menu;
+			View view = LayoutInflater.from(mContext).inflate(R.layout.wm_share_widget, null);
+			TextView notes = (TextView) view.findViewById(R.id.notes);
+			BuShareWidget bu_share_widget = (BuShareWidget) view.findViewById(R.id.bu_share_widget);
+			onLayoutInflater(view, notes, bu_share_widget);
+			bu_share_widget.setOnTargetSelectedListener(this);
+			return view;
+		}
+
+		public void onLayoutInflater(View view, TextView notes, BuShareWidget bu_share_widget) {
+			notes.setText("分享到以下社交平台");
+		}
+
+		@Override
+		public void onTargetSelected(BuShareAppInfo targetAppInfo) {
+			this.menu.dismiss();
+		}
 
 		@Override
 		public void onCancel(Platform arg0, int arg1) {

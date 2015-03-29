@@ -66,9 +66,15 @@ public class BuShareWidget extends RelativeLayout implements OnItemClickListener
 		resetUI(BuShareAppInfo.getShareList());
 	}
 
+	private int pageSize = 6;
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public void resetUI(List<BuShareAppInfo> appLists) {
-		BuShareWidgetConversionHolder.getInstace().initEntry(appLists);
-		targetAppInfoLists = BuShareWidgetConversionHolder.getInstace().targetAppInfoLists;
+		BuShareWidgetConversionHolder.getInstace(pageSize).initEntry(appLists);
+		targetAppInfoLists = BuShareWidgetConversionHolder.getInstace(pageSize).getTargetAppInfos();
 		onCreate();
 	}
 
@@ -115,10 +121,10 @@ public class BuShareWidget extends RelativeLayout implements OnItemClickListener
 			view.setOnItemClickListener(this);
 			view.setBackgroundColor(Color.TRANSPARENT);
 			view.setHorizontalSpacing(5);
-			view.setVerticalSpacing(5);
+			view.setVerticalSpacing(10);
 			view.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
 			view.setCacheColorHint(0);
-			view.setPadding(5, 0, 5, 0);
+			view.setPadding(10, 10, 10, 10);
 			view.setSelector(new ColorDrawable(Color.TRANSPARENT));
 			view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 			view.setGravity(Gravity.CENTER);

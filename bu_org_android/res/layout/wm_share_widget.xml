@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    style="@style/mh_auto_size"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/notes"
+        style="@style/Bu_Menu_Button_White"
+        android:gravity="center"
+        android:padding="@dimen/Default_Padding"
+        android:singleLine="true"
+        android:text="@string/prompt_tip"
+        android:textColor="@color/black_color"
+        android:textSize="@dimen/TitleTextSize" />
+
+    <org.bu.android.share.BuShareWidget
+        android:id="@+id/bu_share_widget"
+        style="@style/mh_auto_size"
+        android:layout_height="210dip"
+        android:background="@drawable/roundlist_body"
+        android:paddingBottom="@dimen/Default_Padding" />
+
+</LinearLayout>

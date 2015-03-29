@@ -6,25 +6,28 @@ import java.util.List;
 public class BuShareWidgetConversionHolder {
 
 	/** 每一页表情的个数 */
-	private int pageSize = 9;
 
 	private static BuShareWidgetConversionHolder Instance;
 
-	/** 保存于内存中的表情集合 */
-	private List<BuShareAppInfo> targetAppInfos = new ArrayList<BuShareAppInfo>();
-
 	/** 表情分页的结果集合 */
-	public List<List<BuShareAppInfo>> targetAppInfoLists = new ArrayList<List<BuShareAppInfo>>();
+	private List<List<BuShareAppInfo>> targetAppInfoLists = new ArrayList<List<BuShareAppInfo>>();
 
 	private BuShareWidgetConversionHolder() {
 
 	}
 
-	public static BuShareWidgetConversionHolder getInstace() {
+	private static int PAGE_SIZE = 9;
+
+	public static BuShareWidgetConversionHolder getInstace(int pagesize) {
 		if (Instance == null) {
 			Instance = new BuShareWidgetConversionHolder();
 		}
+		PAGE_SIZE = pagesize;
 		return Instance;
+	}
+
+	public List<List<BuShareAppInfo>> getTargetAppInfos() {
+		return targetAppInfoLists;
 	}
 
 	public void initEntry() {
@@ -32,23 +35,12 @@ public class BuShareWidgetConversionHolder {
 	}
 
 	public void initEntry(List<BuShareAppInfo> targetAppInfos) {
-		targetAppInfoLists.clear();
-		targetAppInfos.clear();
-		this.targetAppInfos = targetAppInfos;
-		parseData();
-	}
-
-	/**
-	 * 解析字符
-	 * 
-	 * @param data
-	 */
-	private void parseData() {
-
-		int pageCount = (int) Math.ceil(targetAppInfos.size() / pageSize + 0.1);
+		List<List<BuShareAppInfo>> targetAppInfoLists = new ArrayList<List<BuShareAppInfo>>();
+		int pageCount = (int) Math.ceil(targetAppInfos.size() / PAGE_SIZE + 0.1);
 		for (int i = 0; i < pageCount; i++) {
-			targetAppInfoLists.add(getData(i));
+			targetAppInfoLists.add(getPageData(targetAppInfos, i));
 		}
+		this.targetAppInfoLists = targetAppInfoLists;
 	}
 
 	/**
@@ -57,19 +49,19 @@ public class BuShareWidgetConversionHolder {
 	 * @param page
 	 * @return
 	 */
-	private List<BuShareAppInfo> getData(int page) {
+	private List<BuShareAppInfo> getPageData(List<BuShareAppInfo> targetAppInfos, int page) {
 		List<BuShareAppInfo> list = new ArrayList<BuShareAppInfo>();
 		try {
-			int startIndex = page * pageSize;
-			int endIndex = startIndex + pageSize;
+			int startIndex = page * PAGE_SIZE;
+			int endIndex = startIndex + PAGE_SIZE;
 
 			if (endIndex > targetAppInfos.size()) {
 				endIndex = targetAppInfos.size();
 			}
 			// 不这么写，会在viewpager加载中报集合操作异常，我也不知道为什么
 			list.addAll(targetAppInfos.subList(startIndex, endIndex));
-			if (list.size() < pageSize) {
-				for (int i = list.size(); i < pageSize; i++) {
+			if (list.size() < PAGE_SIZE) {
+				for (int i = list.size(); i < PAGE_SIZE; i++) {
 					BuShareAppInfo object = new BuShareAppInfo();
 					list.add(object);
 				}
