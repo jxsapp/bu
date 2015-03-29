@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.view.View;
 import android.widget.BaseAdapter;
 
 public abstract class BuAdapter<T, D> extends BaseAdapter {
@@ -20,6 +21,11 @@ public abstract class BuAdapter<T, D> extends BaseAdapter {
 
 	public void refresh(List<D> datas) {
 		this.datas = datas;
+		notifyDataSetChanged();
+	}
+
+	public void appends(List<D> datas) {
+		this.datas.addAll(datas);
 		notifyDataSetChanged();
 	}
 
@@ -46,6 +52,18 @@ public abstract class BuAdapter<T, D> extends BaseAdapter {
 	@Override
 	public long getItemId(int position) {
 		return position;
+	}
+
+	public abstract class ItemViewHolder {
+		protected View convertView;
+
+		protected ItemViewHolder(View convertView) {
+			super();
+			this.convertView = convertView;
+		}
+
+		protected abstract void init(D d);
+
 	}
 
 }
