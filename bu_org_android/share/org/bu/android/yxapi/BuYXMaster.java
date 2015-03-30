@@ -28,21 +28,21 @@ import android.graphics.BitmapFactory;
  * @author jxs
  * @time 2014-2-11 上午8:59:24
  */
-public interface YiXinMaster {
+public interface BuYXMaster {
 
 	public static final int THUMB_SIZE = 150;
 
-	class YiXinViewHolder {
+	class BuYXViewHolder {
 
 	}
 
-	public enum YiXinTransaction {
+	public enum BuYXTransaction {
 
 		TEXT("text"), WEB_PAGE("webpage"), IMG("img");
 
 		private String type;
 
-		private YiXinTransaction(String type) {
+		private BuYXTransaction(String type) {
 			this.type = type;
 		}
 
@@ -51,13 +51,13 @@ public interface YiXinMaster {
 		}
 	}
 
-	public class YiXinLogic extends BuUILogic<Activity, YiXinViewHolder> {
+	public class BuYXLogic extends BuUILogic<Activity, BuYXViewHolder> {
 		private IYXAPI api;
 
-		public YiXinLogic(Activity t) {
-			super(t, new YiXinViewHolder());
+		public BuYXLogic(Activity t) {
+			super(t, new BuYXViewHolder());
 			// api = YXAPIFactory.createYXAPI(mActivity, ApiConfig.APP_ID);
-			api = YXAPIFactory.createYXAPI(mActivity, YXApiConfig.APP_ID);
+			api = YXAPIFactory.createYXAPI(mActivity, BuYXApiConfig.APP_ID);
 		}
 
 		/**
@@ -84,7 +84,7 @@ public interface YiXinMaster {
 
 			// 构造一个Req
 			SendMessageToYX.Req req = new SendMessageToYX.Req();
-			req.transaction = YiXinTransaction.TEXT.transaction(); // transaction字段用于唯一标识一个请求
+			req.transaction = BuYXTransaction.TEXT.transaction(); // transaction字段用于唯一标识一个请求
 			req.message = msg;
 			req.scene = isTimelineCb ? SendMessageToYX.Req.YXSceneTimeline : SendMessageToYX.Req.YXSceneSession;
 			// 调用api接口发送数据到微信
@@ -121,7 +121,7 @@ public interface YiXinMaster {
 			}
 
 			SendMessageToYX.Req req = new SendMessageToYX.Req();
-			req.transaction = YiXinTransaction.WEB_PAGE.transaction();
+			req.transaction = BuYXTransaction.WEB_PAGE.transaction();
 			req.message = msg;
 			req.scene = isTimelineCb ? SendMessageToYX.Req.YXSceneTimeline : SendMessageToYX.Req.YXSceneSession;
 
@@ -148,7 +148,7 @@ public interface YiXinMaster {
 			msg.thumbData = ShareUtils.bmpToByteArray(thumbBmp, true); // 设置缩略图
 
 			SendMessageToYX.Req req = new SendMessageToYX.Req();
-			req.transaction = YiXinTransaction.IMG.transaction();
+			req.transaction = BuYXTransaction.IMG.transaction();
 			req.message = msg;
 			req.scene = isTimelineCb ? SendMessageToYX.Req.YXSceneTimeline : SendMessageToYX.Req.YXSceneSession;
 			boolean rst = api.sendRequest(req);

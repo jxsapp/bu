@@ -22,7 +22,7 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
  * @author Jiangxs
  * @Date 2014-2-22 下午4:21:50
  */
-public class WXEntryActivity extends BuActivity implements IWXAPIEventHandler {
+public class BuWXEntryActivity extends BuActivity implements IWXAPIEventHandler {
 	// IWXAPI 是第三方app和微信通信的openapi接口
 	private IWXAPI api;
 
@@ -30,9 +30,9 @@ public class WXEntryActivity extends BuActivity implements IWXAPIEventHandler {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// 通过WXAPIFactory工厂，获取IWXAPI的实例
-		api = WXAPIFactory.createWXAPI(this, WXApiConfig.APP_ID, false);
+		api = WXAPIFactory.createWXAPI(this, BuWXApiConfig.APP_ID, false);
 		if (api.isWXAppInstalled()) {
-			api.registerApp(WXApiConfig.APP_ID);
+			api.registerApp(BuWXApiConfig.APP_ID);
 		}
 		api.handleIntent(getIntent(), this);
 	}

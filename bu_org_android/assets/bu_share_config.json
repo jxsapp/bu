@@ -1,0 +1,53 @@
+[
+    {
+        "ShareKey": "ShareSDK",
+        "AppKey": "6706dc6741a0"
+    },
+    {
+        "ShareKey": "Wechat",
+        "AppId": "wx4c4a94eaaab282c2",
+        "AppKey": "db74d65cd17d1e1f109df7d5dd2b40a1"
+    },
+
+    {
+        "ShareKey": "WechatMoments",
+        "AppId": "wx4c4a94eaaab282c2",
+        "AppKey": "db74d65cd17d1e1f109df7d5dd2b40a1"
+    },
+
+    {
+        "ShareKey": "WechatFavorite",
+        "AppId": "wx4c4a94eaaab282c2",
+        "AppKey": "db74d65cd17d1e1f109df7d5dd2b40a1"
+    },
+
+    {
+        "ShareKey": "QQ",
+        "AppId": "1104463614",
+        "AppKey": "YiElNEFZaSIbqmVL"
+    },
+
+    {
+        "ShareKey": "QZone",
+        "AppId": "1104463614",
+        "AppKey": "YiElNEFZaSIbqmVL"
+    },
+
+    {
+        "ShareKey": "SinaWeibo",
+        "AppKey": "3311432338",
+        "AppSecret": "b086b9beeaf1e5a2c7bd1c1703c65e39",
+        "RedirectUrl": "http://risk.maiziji.cn/oauth"
+    },
+
+    {
+        "ShareKey": "TencentWeibo",
+        "AppKey": "801562085",
+        "AppSecret": "1f28c72cbd0a4f29385063b5d7ac4162",
+        "RedirectUri": "http://risk.maiziji.cn"
+    }
+]
+
+
+
+

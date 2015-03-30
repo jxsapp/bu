@@ -7,14 +7,15 @@ import org.bu.android.R;
 import org.bu.android.acty.BuActivity;
 import org.bu.android.app.BuUILogic;
 import org.bu.android.misc.BuFileHolder;
+import org.bu.android.misc.BuStringUtils;
 import org.bu.android.share.misc.ShareImageUtils;
 import org.bu.android.share.misc.ShareOptionHolder;
 import org.bu.android.share.misc.ShareSmsUtils;
 import org.bu.android.share.misc.ShareUtils;
 import org.bu.android.widget.BuMenu;
 import org.bu.android.widget.BuMenuMaster.BuMenuListener;
-import org.bu.android.wxapi.WeiXinMaster;
-import org.bu.android.yxapi.YiXinMaster;
+import org.bu.android.wxapi.BuWXMaster;
+import org.bu.android.yxapi.BuYXMaster;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,6 +27,12 @@ import android.widget.TextView;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 
+/**
+ * 需要在Assets下放置 bu_share_config.xml配置文件
+ * 
+ * @author jxs
+ * @date 2015-3-30 下午12:01:19
+ */
 public interface BuShareMaster {
 
 	class BuShareViewHoler {
@@ -80,13 +87,13 @@ public interface BuShareMaster {
 
 	}
 
-	public class BuShareLogic extends BuUILogic<BuActivity, BuShareViewHoler> implements WeiXinMaster, YiXinMaster {
+	public class BuShareLogic extends BuUILogic<BuActivity, BuShareViewHoler> implements BuWXMaster, BuYXMaster {
 
-		private WeixinLogic weixinLogic;
-		private YiXinLogic yixinLogic;
+		private BuWXLogic weixinLogic;
+		private BuYXLogic yixinLogic;
 		private BuShareListener shareListener;
-
 		private BuMenuListener buMenuListener;
+		private BuShareInfo shareInfo = new BuShareInfo();
 
 		public BuShareLogic(BuActivity t, BuShareListener _listener) {
 			super(t, new BuShareViewHoler());
@@ -94,8 +101,8 @@ public interface BuShareMaster {
 			mViewHolder.weiMiMenu = new BuMenu(mActivity);
 
 			this.shareListener = _listener;
-			weixinLogic = new WeixinLogic(mActivity);
-			yixinLogic = new YiXinLogic(mActivity);
+			weixinLogic = new BuWXLogic(mActivity);
+			yixinLogic = new BuYXLogic(mActivity);
 
 			buMenuListener = new BuMenuListener() {
 
@@ -134,11 +141,6 @@ public interface BuShareMaster {
 			mOptionHolder.share(appInfo);
 		}
 
-		public void showMenu(BuShareInfo locationInfo) {
-			mActivity.dismissLoading();
-			mViewHolder.weiMiMenu.show(shareListener.getRootView(), buMenuListener);// 显示分享到
-		}
-
 		protected Bitmap thumbZip(String imagePath) {
 			Bitmap thumb = ShareUtils.decodeFile(new File(imagePath));
 			thumb = ShareImageUtils.compressBySize(thumb, 80, 80);
@@ -147,27 +149,68 @@ public interface BuShareMaster {
 			return thumb;
 		}
 
-		void toShare4Location(BuShareAppInfo targetAppInfo, BuShareInfo info) {
+		public void shareText(BuShareInfo shareInfo) {
+			share(shareInfo, true);
+		}
 
-			Bitmap thumb = BitmapFactory.decodeResource(mActivity.getResources(), R.drawable.translate1x1);
-			thumb = BuFileHolder.compressImage(thumb);
+		public void shareWebpage(BuShareInfo shareInfo) {
+			share(shareInfo, false);
+		}
+
+		private void share(BuShareInfo shareInfo, boolean isText) {
+			this.shareInfo = shareInfo;
+			this.shareInfo.setShareText(isText);
+			mActivity.dismissLoading();
+			mViewHolder.weiMiMenu.show(shareListener.getRootView(), buMenuListener);// 显示分享到
+		}
+
+		public void onTargetSelected(BuShareAppInfo targetAppInfo) {
+			share(targetAppInfo, shareInfo);
+		}
+
+		private void share(BuShareAppInfo targetAppInfo, BuShareInfo info) {
+
+			Bitmap thumb = BitmapFactory.decodeResource(mActivity.getResources(), R.drawable.ic_launcher);
 			File file = new File(BuFileHolder.RandomFileName.getPicFileName());
-			BuFileHolder.savePic(thumb, file);
+			if (!BuStringUtils.isEmpety(info.getImagePath())) {
+				file = new File(info.getImagePath());
+			}
+			if (BuStringUtils.isEmpety(info.getImagePath()) || file.exists() || file.length() == 0) {
+				thumb = BuFileHolder.compressImage(thumb);
+				BuFileHolder.savePic(thumb, file);
+			}
 
-			String title = "";
+			String title = info.getTitle();
+			String content = info.getContent();
 
 			if (targetAppInfo.getTargetAppDefine().id == BuShareAppDefine.SMS.id) {
-				ShareSmsUtils.sendtoMessage(mActivity, info.getNumber(), title + " \n" + info.getShareUrl());
+				ShareSmsUtils.sendtoMessage(mActivity, info.getNumber(), title + "\n" + content + " \n" + info.getUrl());
 			} else if (targetAppInfo.getTargetAppDefine().id == BuShareAppDefine.WECHAT.id) {
-				weixinLogic.sendWebPage(info.getShareUrl(), title, "", file.getAbsolutePath(), false);
+				if (info.isShareText()) {
+					weixinLogic.sendTextMsg(content, false);
+				} else {
+					weixinLogic.sendWebPage(info.getUrl(), title, content, file.getAbsolutePath(), false);
+				}
 			} else if (targetAppInfo.getTargetAppDefine().id == BuShareAppDefine.WECHAT_CMTS.id) {
-				weixinLogic.sendWebPage(info.getShareUrl(), title, "", file.getAbsolutePath(), true);
+				if (info.isShareText()) {
+					weixinLogic.sendTextMsg(content, true);
+				} else {
+					weixinLogic.sendWebPage(info.getUrl(), title, content, file.getAbsolutePath(), true);
+				}
 			} else if (targetAppInfo.getTargetAppDefine().id == BuShareAppDefine.YIXIN.id) {
-				yixinLogic.sendWebPage(info.getShareUrl(), title, "", file.getAbsolutePath(), false);
+				if (info.isShareText()) {
+					yixinLogic.sendTextMsg(content, false);
+				} else {
+					yixinLogic.sendWebPage(info.getUrl(), title, content, file.getAbsolutePath(), false);
+				}
 			} else if (targetAppInfo.getTargetAppDefine().id == BuShareAppDefine.YIXIN_CMTS.id) {
-				yixinLogic.sendWebPage(info.getShareUrl(), title, "", file.getAbsolutePath(), true);
+				if (info.isShareText()) {
+					yixinLogic.sendTextMsg(content, true);
+				} else {
+					yixinLogic.sendWebPage(info.getUrl(), title, content, file.getAbsolutePath(), true);
+				}
 			} else {
-				shareSDK_share(targetAppInfo, title, "", "", file.getPath(), info.getShareUrl());
+				shareSDK_share(targetAppInfo, title, content, "", file.getPath(), info.getUrl());
 			}
 		}
 

@@ -3,33 +3,23 @@ package org.bu.android.share;
 import java.util.HashMap;
 
 public class PlatformData {
-	private String shareSDK = "";
+	private String ShareKey = "";
 	private String AppKey = "";// 568898243"
 	private String AppSecret = "";// 38a4f8204cc784f81f9f0daaf31e02e3"
-	private String Enable = "";// true"
-	private String Id = "";// 1"
 	private String RedirectUrl = "";// http://www.sharesdk.cn"
-	private String ShareByAppClient = "";// true"
-	private String SortId = "";// 1"
 
-	public String getShareSDK() {
-		return shareSDK;
-	}
+	private String Id = "";// 1"
 
 	public HashMap<String, Object> getReqData() {
 		HashMap<String, Object> data = new HashMap<String, Object>();
 		data.put("AppKey", AppKey);
 		data.put("AppSecret", AppSecret);
-		data.put("Enable", Enable);
+		data.put("Enable", "true");
 		data.put("Id", Id);
 		data.put("RedirectUrl", RedirectUrl);
-		data.put("ShareByAppClient", ShareByAppClient);
-		data.put("SortId", SortId);
+		data.put("ShareByAppClient", "true");
+		data.put("SortId", Id);
 		return data;
-	}
-
-	public void setShareSDK(String tag) {
-		this.shareSDK = tag;
 	}
 
 	public String getAppKey() {
@@ -48,12 +38,12 @@ public class PlatformData {
 		AppSecret = appSecret;
 	}
 
-	public String getEnable() {
-		return Enable;
+	public String getRedirectUrl() {
+		return RedirectUrl;
 	}
 
-	public void setEnable(String enable) {
-		Enable = enable;
+	public void setRedirectUrl(String redirectUrl) {
+		RedirectUrl = redirectUrl;
 	}
 
 	public String getId() {
@@ -64,28 +54,12 @@ public class PlatformData {
 		Id = id;
 	}
 
-	public String getRedirectUrl() {
-		return RedirectUrl;
+	public String getShareKey() {
+		return ShareKey;
 	}
 
-	public void setRedirectUrl(String redirectUrl) {
-		RedirectUrl = redirectUrl;
-	}
-
-	public String getShareByAppClient() {
-		return ShareByAppClient;
-	}
-
-	public void setShareByAppClient(String shareByAppClient) {
-		ShareByAppClient = shareByAppClient;
-	}
-
-	public String getSortId() {
-		return SortId;
-	}
-
-	public void setSortId(String sortId) {
-		SortId = sortId;
+	public void setShareKey(String shareKey) {
+		ShareKey = shareKey;
 	}
 
 }

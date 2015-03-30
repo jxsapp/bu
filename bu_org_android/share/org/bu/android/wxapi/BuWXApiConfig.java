@@ -1,6 +1,6 @@
 package org.bu.android.wxapi;
 
-public interface WXApiConfig {
+public interface BuWXApiConfig {
 
 	public static final String APP_ID = "wx4c4a94eaaab282c2";
 	// public static final String APP_ID = "wxd930ea5d5a258f4f";// demo app_id

@@ -1,14 +1,24 @@
 package org.bu.android.share;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.bu.android.boot.BuApplication;
-import org.xmlpull.v1.XmlPullParser;
 
-import android.util.Xml;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+/**
+ * 需要在Assets下放置 bu_share_config.json配置文件
+ * 
+ * @author jxs
+ * @date 2015-3-30 下午12:00:20
+ */
 public class PlatformDataHolder {
 
 	private static PlatformDataHolder dataHolder;
@@ -29,52 +39,50 @@ public class PlatformDataHolder {
 
 	private void init() {
 		try {
-			InputStream is = BuApplication.getApplication().getAssets().open("ShareSDK.xml");
+			InputStream is = BuApplication.getApplication().getAssets().open("bu_share_config.json");
 			this.platformDatas = parse(is);
+			is.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public PlatformData getPlatformData(String key) {
-		if (null == platformDatas && platformDatas.size() == 0) {
+		if (null == platformDatas || platformDatas.size() == 0) {
 			init();
 		}
 		return platformDatas.get(key);
 	}
 
 	public Map<String, PlatformData> parse(InputStream is) throws Exception {
-		Map<String, PlatformData> datas = null;
-		PlatformData data = null;
-		XmlPullParser parser = Xml.newPullParser(); // 由android.util.Xml创建一个XmlPullParser实例
-		parser.setInput(is, "UTF-8"); // 设置输入流 并指明编码方式
-
-		int eventType = parser.getEventType();
-		while (eventType != XmlPullParser.END_DOCUMENT) {
-			switch (eventType) {
-			case XmlPullParser.START_DOCUMENT:
-				datas = new HashMap<String, PlatformData>();
-				break;
-			case XmlPullParser.START_TAG:
-				if (!parser.getName().equals("DevInfor")) {
-					data = new PlatformData();
-					data.setShareSDK(parser.getName());
-					data.setAppKey(parser.getAttributeValue("", "AppKey"));
-					data.setAppSecret(parser.getAttributeValue("", "AppSecret"));
-					data.setEnable(parser.getAttributeValue("", "Enable"));
-					data.setId(parser.getAttributeValue("", "Id"));
-					data.setRedirectUrl(parser.getAttributeValue("", "RedirectUrl"));
-					data.setShareByAppClient(parser.getAttributeValue("", "ShareByAppClient"));
-					data.setSortId(parser.getAttributeValue("", "SortId"));
-					datas.put(data.getShareSDK(), data);
-				}
-				break;
-			case XmlPullParser.END_TAG:
-				break;
-			}
-			eventType = parser.next();
+		Map<String, PlatformData> datas = new HashMap<String, PlatformData>();
+		List<PlatformData> list = getlist(inputStream2String(is));
+		int index = 0;
+		for (PlatformData data : list) {
+			index++;
+			data.setId(index + "");
+			datas.put(data.getShareKey(), data);
 		}
 		return datas;
+	}
+
+	public static String inputStream2String(InputStream is) throws IOException {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		int i = -1;
+		while ((i = is.read()) != -1) {
+			baos.write(i);
+		}
+		return baos.toString();
+	}
+
+	public static List<PlatformData> getlist(String json) {
+		List<PlatformData> list = new ArrayList<PlatformData>();
+		java.lang.reflect.Type type = new TypeToken<List<PlatformData>>() {
+		}.getType();
+		Gson gson = new Gson();
+		list = gson.fromJson(json, type);
+		return list;
+
 	}
 
 }

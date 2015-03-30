@@ -6,7 +6,7 @@ package org.bu.android.yxapi;
 import im.yixin.sdk.api.YXAPIBaseBroadcastReceiver;
 import im.yixin.sdk.channel.YXMessageProtocol;
 
-public class AppRegister extends YXAPIBaseBroadcastReceiver {
+public class BuYXRegister extends YXAPIBaseBroadcastReceiver {
 
 	/*
 	 * (non-Javadoc)
@@ -15,7 +15,7 @@ public class AppRegister extends YXAPIBaseBroadcastReceiver {
 	 */
 	@Override
 	protected String getAppId() {
-		return YXApiConfig.APP_ID;
+		return BuYXApiConfig.APP_ID;
 	}
 
 	/***********************

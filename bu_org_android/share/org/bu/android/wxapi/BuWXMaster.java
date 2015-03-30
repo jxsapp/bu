@@ -27,21 +27,21 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
  * @author jxs
  * @time 2014-2-11 上午8:59:24
  */
-public interface WeiXinMaster {
+public interface BuWXMaster {
 
 	public static final int THUMB_SIZE = 150;
 
-	class WeixinViewHolder {
+	class BuWXViewHolder {
 
 	}
 
-	public enum WeiXinTransaction {
+	public enum BuWXTransaction {
 
 		TEXT("text"), WEB_PAGE("webpage"), IMG("img");
 
 		private String type;
 
-		private WeiXinTransaction(String type) {
+		private BuWXTransaction(String type) {
 			this.type = type;
 		}
 
@@ -50,13 +50,13 @@ public interface WeiXinMaster {
 		}
 	}
 
-	public class WeixinLogic extends BuUILogic<Activity, WeixinViewHolder> {
+	public class BuWXLogic extends BuUILogic<Activity, BuWXViewHolder> {
 		private IWXAPI api;
 
-		public WeixinLogic(Activity t) {
-			super(t, new WeixinViewHolder());
+		public BuWXLogic(Activity t) {
+			super(t, new BuWXViewHolder());
 			// api = WXAPIFactory.createWXAPI(mActivity, ApiConfig.APP_ID);
-			api = WXAPIFactory.createWXAPI(mActivity, WXApiConfig.APP_ID, false);
+			api = WXAPIFactory.createWXAPI(mActivity, BuWXApiConfig.APP_ID, false);
 		}
 
 		/**
@@ -82,7 +82,7 @@ public interface WeiXinMaster {
 
 			// 构造一个Req
 			SendMessageToWX.Req req = new SendMessageToWX.Req();
-			req.transaction = WeiXinTransaction.TEXT.transaction(); // transaction字段用于唯一标识一个请求
+			req.transaction = BuWXTransaction.TEXT.transaction(); // transaction字段用于唯一标识一个请求
 			req.message = msg;
 			req.scene = isTimelineCb ? SendMessageToWX.Req.WXSceneTimeline : SendMessageToWX.Req.WXSceneSession;
 			// 调用api接口发送数据到微信
@@ -120,7 +120,7 @@ public interface WeiXinMaster {
 			BuLog.e(TAG, "参数合法:MSG__" + checkArgs(msg));
 
 			SendMessageToWX.Req req = new SendMessageToWX.Req();
-			req.transaction = WeiXinTransaction.WEB_PAGE.transaction();
+			req.transaction = BuWXTransaction.WEB_PAGE.transaction();
 			req.message = msg;
 			req.scene = isTimelineCb ? SendMessageToWX.Req.WXSceneTimeline : SendMessageToWX.Req.WXSceneSession;
 
@@ -186,7 +186,7 @@ public interface WeiXinMaster {
 			msg.thumbData = ShareUtils.bmpToByteArray(thumbBmp, true); // 设置缩略图
 
 			SendMessageToWX.Req req = new SendMessageToWX.Req();
-			req.transaction = WeiXinTransaction.IMG.transaction();
+			req.transaction = BuWXTransaction.IMG.transaction();
 			req.message = msg;
 			req.scene = isTimelineCb ? SendMessageToWX.Req.WXSceneTimeline : SendMessageToWX.Req.WXSceneSession;
 			boolean rst = api.sendReq(req);

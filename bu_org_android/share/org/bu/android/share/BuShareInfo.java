@@ -12,10 +12,13 @@ public class BuShareInfo extends ModleInfo {
 
 	private static final long serialVersionUID = -7668157280854487330L;
 
-	private String shareUrl = "";
+	private String url = "";
 	private String number = "";
-	private String title;
+	private String title = "";
+	private String content = "";
+	private String imagePath = "";
 	private Map<String, Serializable> extras = new HashMap<String, Serializable>();
+	private boolean shareText = false;
 
 	public Bundle getExtras() {
 		Bundle bundle = new Bundle();
@@ -35,12 +38,12 @@ public class BuShareInfo extends ModleInfo {
 		super();
 	}
 
-	public String getShareUrl() {
-		return shareUrl;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setShareUrl(String shareUrl) {
-		this.shareUrl = shareUrl;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getNumber() {
@@ -59,8 +62,32 @@ public class BuShareInfo extends ModleInfo {
 		this.title = title;
 	}
 
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
 	public void setExtras(Map<String, Serializable> extras) {
 		this.extras = extras;
+	}
+
+	public boolean isShareText() {
+		return shareText;
+	}
+
+	public void setShareText(boolean shareText) {
+		this.shareText = shareText;
 	}
 
 }

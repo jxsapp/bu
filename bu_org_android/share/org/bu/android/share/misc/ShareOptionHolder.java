@@ -9,11 +9,11 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.bu.android.acty.BuActivity;
-import org.bu.android.share.PlatformData;
-import org.bu.android.share.PlatformDataHolder;
+import org.bu.android.share.BuShareAppInfo;
 import org.bu.android.share.BuShareCallback;
 import org.bu.android.share.BuShareCore;
-import org.bu.android.share.BuShareAppInfo;
+import org.bu.android.share.PlatformData;
+import org.bu.android.share.PlatformDataHolder;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -50,8 +50,8 @@ public class ShareOptionHolder extends FakeActivity implements Handler.Callback 
 	public Platform initShareSDK(BuShareAppInfo targetAppInfo) {
 		ShareSDK.initSDK(mActivity, PlatformDataHolder.getDataHolder().getPlatformData("ShareSDK").getAppKey(), true);
 		PlatformData platformData = PlatformDataHolder.getDataHolder().getPlatformData(targetAppInfo.getTargetAppDefine().shareSDK);
-		Platform platform = ShareSDK.getPlatform(platformData.getShareSDK());
-		ShareSDK.setPlatformDevInfo(platformData.getShareSDK(), platformData.getReqData());
+		Platform platform = ShareSDK.getPlatform(platformData.getShareKey());
+		ShareSDK.setPlatformDevInfo(platformData.getShareKey(), platformData.getReqData());
 		return platform;
 	}
 

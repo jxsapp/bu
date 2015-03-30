@@ -15,7 +15,7 @@ import android.widget.Toast;
  * @author Jiangxs
  * @Date 2014-2-22 下午4:21:50
  */
-public class YXEntryActivity extends BaseYXEntryActivity {
+public class BuYXEntryActivity extends BaseYXEntryActivity {
 
 	@Override
 	public void onReq(im.yixin.sdk.api.BaseReq req) {
@@ -29,16 +29,16 @@ public class YXEntryActivity extends BaseYXEntryActivity {
 			SendMessageToYX.Resp resp1 = (SendMessageToYX.Resp) resp;
 			switch (resp1.errCode) {
 			case BaseResp.ErrCode.ERR_OK:
-				Toast.makeText(YXEntryActivity.this, "分享成功", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "分享成功", Toast.LENGTH_LONG).show();
 				break;
 			case BaseResp.ErrCode.ERR_COMM:
-				Toast.makeText(YXEntryActivity.this, "分享失败", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "分享失败", Toast.LENGTH_LONG).show();
 				break;
 			case BaseResp.ErrCode.ERR_USER_CANCEL:
-				Toast.makeText(YXEntryActivity.this, "用户取消", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "用户取消", Toast.LENGTH_LONG).show();
 				break;
 			case BaseResp.ErrCode.ERR_SENT_FAILED:
-				Toast.makeText(YXEntryActivity.this, "发送失败", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "发送失败", Toast.LENGTH_LONG).show();
 				break;
 			}
 			break;
@@ -46,16 +46,16 @@ public class YXEntryActivity extends BaseYXEntryActivity {
 			SendAuthToYX.Resp resp2 = (SendAuthToYX.Resp) resp;
 			switch (resp2.errCode) {
 			case BaseResp.ErrCode.ERR_OK:
-				Toast.makeText(YXEntryActivity.this, "获取Code成功，code=" + resp2.code, Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "获取Code成功，code=" + resp2.code, Toast.LENGTH_LONG).show();
 				break;
 			case BaseResp.ErrCode.ERR_COMM:
-				Toast.makeText(YXEntryActivity.this, "失败", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "失败", Toast.LENGTH_LONG).show();
 				break;
 			case BaseResp.ErrCode.ERR_USER_CANCEL:
-				Toast.makeText(YXEntryActivity.this, "用户拒绝", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "用户拒绝", Toast.LENGTH_LONG).show();
 				break;
 			case BaseResp.ErrCode.ERR_AUTH_DENIED:
-				Toast.makeText(YXEntryActivity.this, "用户拒绝", Toast.LENGTH_LONG).show();
+				Toast.makeText(BuYXEntryActivity.this, "用户拒绝", Toast.LENGTH_LONG).show();
 				break;
 			}
 		}
@@ -63,7 +63,7 @@ public class YXEntryActivity extends BaseYXEntryActivity {
 
 	@Override
 	protected IYXAPI getIYXAPI() {
-		return YXAPIFactory.createYXAPI(this, YXApiConfig.APP_ID);
+		return YXAPIFactory.createYXAPI(this, BuYXApiConfig.APP_ID);
 	}
 
 	protected void goToGetMsg() {
