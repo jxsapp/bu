@@ -11,7 +11,7 @@ public class BuWXRegister extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		final IWXAPI api = WXAPIFactory.createWXAPI(context, BuWXApiConfig.APP_ID, false);
-		api.registerApp(BuWXApiConfig.APP_ID);
+		final IWXAPI api = WXAPIFactory.createWXAPI(context, BuWXApiConfig.getInstance().getAppId(), false);
+		api.registerApp(BuWXApiConfig.getInstance().getAppId());
 	}
 }

@@ -1,8 +1,42 @@
 package org.bu.android.yxapi;
 
-public interface BuYXApiConfig {
+import org.bu.android.share.BuShareAppDefine;
+import org.bu.android.share.PlatformData;
+import org.bu.android.share.PlatformDataHolder;
 
-	public static final String APP_ID = "yx52340c9a81cc4e9b9f3a6887ab84625e";
-	public static final String APP_SECRET = "9956f7bee1d02845d";
+public class BuYXApiConfig {
+
+	private BuYXApiConfig() {
+		super();
+	}
+
+	private static BuYXApiConfig instance = null;
+
+	public static BuYXApiConfig getInstance() {
+
+		if (null == instance) {
+			instance = new BuYXApiConfig();
+		}
+
+		return instance;
+	}
+
+	public final String getAppId() {
+
+		PlatformData data = PlatformDataHolder.getDataHolder().getPlatformData(BuShareAppDefine.WECHAT.shareSDK);
+		if (null == data) {
+			data = new PlatformData();
+		}
+		return data.getAppId();
+	}
+
+	public final String getAppKey() {
+
+		PlatformData data = PlatformDataHolder.getDataHolder().getPlatformData(BuShareAppDefine.WECHAT.shareSDK);
+		if (null == data) {
+			data = new PlatformData();
+		}
+		return data.getAppKey();
+	}
 
 }

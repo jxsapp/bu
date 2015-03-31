@@ -63,7 +63,7 @@ public class BuYXEntryActivity extends BaseYXEntryActivity {
 
 	@Override
 	protected IYXAPI getIYXAPI() {
-		return YXAPIFactory.createYXAPI(this, BuYXApiConfig.APP_ID);
+		return YXAPIFactory.createYXAPI(this, BuYXApiConfig.getInstance().getAppId());
 	}
 
 	protected void goToGetMsg() {

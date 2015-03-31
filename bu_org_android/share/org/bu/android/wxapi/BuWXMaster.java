@@ -56,7 +56,7 @@ public interface BuWXMaster {
 		public BuWXLogic(Activity t) {
 			super(t, new BuWXViewHolder());
 			// api = WXAPIFactory.createWXAPI(mActivity, ApiConfig.APP_ID);
-			api = WXAPIFactory.createWXAPI(mActivity, BuWXApiConfig.APP_ID, false);
+			api = WXAPIFactory.createWXAPI(mActivity, BuWXApiConfig.getInstance().getAppId(), false);
 		}
 
 		/**

@@ -1,9 +1,42 @@
 package org.bu.android.wxapi;
 
-public interface BuWXApiConfig {
+import org.bu.android.share.BuShareAppDefine;
+import org.bu.android.share.PlatformData;
+import org.bu.android.share.PlatformDataHolder;
 
-	public static final String APP_ID = "wx4c4a94eaaab282c2";
-	// public static final String APP_ID = "wxd930ea5d5a258f4f";// demo app_id
-	public static final String APP_KEY = "db74d65cd17d1e1f109df7d5dd2b40a1";
+public class BuWXApiConfig {
+
+	private BuWXApiConfig() {
+		super();
+	}
+
+	private static BuWXApiConfig instance = null;
+
+	public static BuWXApiConfig getInstance() {
+
+		if (null == instance) {
+			instance = new BuWXApiConfig();
+		}
+
+		return instance;
+	}
+
+	public final String getAppId() {
+
+		PlatformData data = PlatformDataHolder.getDataHolder().getPlatformData(BuShareAppDefine.WECHAT.shareSDK);
+		if (null == data) {
+			data = new PlatformData();
+		}
+		return data.getAppId();
+	}
+
+	public final String getAppKey() {
+
+		PlatformData data = PlatformDataHolder.getDataHolder().getPlatformData(BuShareAppDefine.WECHAT.shareSDK);
+		if (null == data) {
+			data = new PlatformData();
+		}
+		return data.getAppKey();
+	}
 
 }

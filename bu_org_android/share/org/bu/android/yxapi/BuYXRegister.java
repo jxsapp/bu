@@ -15,7 +15,7 @@ public class BuYXRegister extends YXAPIBaseBroadcastReceiver {
 	 */
 	@Override
 	protected String getAppId() {
-		return BuYXApiConfig.APP_ID;
+		return BuYXApiConfig.getInstance().getAppId();
 	}
 
 	/***********************

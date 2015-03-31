@@ -57,7 +57,7 @@ public interface BuYXMaster {
 		public BuYXLogic(Activity t) {
 			super(t, new BuYXViewHolder());
 			// api = YXAPIFactory.createYXAPI(mActivity, ApiConfig.APP_ID);
-			api = YXAPIFactory.createYXAPI(mActivity, BuYXApiConfig.APP_ID);
+			api = YXAPIFactory.createYXAPI(mActivity, BuYXApiConfig.getInstance().getAppId());
 		}
 
 		/**
