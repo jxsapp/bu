@@ -25,7 +25,7 @@ public class BuShareAppInfo {
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.WEIBO));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.QQ));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.QZONE));
-		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.TENCENT_WEIBO));
+//		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.TENCENT_WEIBO));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.YIXIN));
 		targetAppInfos.add(new BuShareAppInfo(BuShareAppDefine.YIXIN_CMTS));
 		return targetAppInfos;

@@ -4,7 +4,6 @@ import org.bu.android.R;
 
 import cn.sharesdk.sina.weibo.SinaWeibo;
 import cn.sharesdk.tencent.qzone.QZone;
-import cn.sharesdk.tencent.weibo.TencentWeibo;
 
 public enum BuShareAppDefine {
 
@@ -16,8 +15,7 @@ public enum BuShareAppDefine {
 	QZONE(4, "QQ空间", R.drawable.ic_share_qzone, QZone.NAME), //
 	YIXIN(5, "易信好友", R.drawable.ic_share_yixin, "Yixin"), //
 	YIXIN_CMTS(6, "易信朋友圈", R.drawable.ic_share_yixin_cmts, "YixinMoments"), //
-	WEIBO(7, "新浪微博", R.drawable.ic_share_weibo, SinaWeibo.NAME), //
-	TENCENT_WEIBO(8, "腾讯微博", R.drawable.ic_share_tweibo, TencentWeibo.NAME); //
+	WEIBO(7, "新浪微博", R.drawable.ic_share_weibo, SinaWeibo.NAME); //
 
 	public int id = -1;
 	public int icon = R.drawable.translate1x1;
