@@ -9,6 +9,20 @@
         android:layout_height="@dimen/actionbar_height"
         android:orientation="horizontal" >
 
+        <!-- android:layout_toRightOf="@id/actionbar_home_bg" -->
+
+        <TextView
+            android:id="@+id/actionbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:minWidth="50dip"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/TitleTextSize" />
+
         <LinearLayout
             android:id="@+id/actionbar_home_bg"
             android:layout_width="wrap_content"
@@ -20,42 +34,14 @@
             android:paddingRight="@dimen/Default_Padding"
             android:visibility="gone" >
 
-            <ImageView
-                android:id="@+id/actionbar_has_new"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center_vertical"
-                android:layout_margin="@dimen/Default_Padding"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/translate1x1"
-                android:visibility="gone" />
-
             <Button
                 android:id="@+id/actionbar_home_btn"
                 style="@style/Ptas_ActionBarHomeItem"
-                android:layout_gravity="center" />
-
-            <TextView
-                android:id="@+id/home_split"
-                style="@style/auto_size"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginBottom="2dip"
-                android:layout_marginLeft="@dimen/Default_Padding"
-                android:layout_marginTop="2dip"
-                android:maxWidth="2dip" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" />
         </LinearLayout>
-
-        <org.bu.android.widget.BuActionBarTitle
-            android:id="@+id/actionbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignWithParentIfMissing="true"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/actionbar_home_bg"
-            android:gravity="center_horizontal"
-            android:minWidth="50dip" />
 
         <ImageView
             android:id="@+id/actionbar_progress_iv"

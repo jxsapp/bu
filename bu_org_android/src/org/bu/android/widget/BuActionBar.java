@@ -24,7 +24,7 @@ import android.widget.TextView;
 public class BuActionBar extends RelativeLayout implements OnClickListener {
 
 	private LayoutInflater mInflater;
-	private BuActionBarTitle mTitleView;
+	private TextView mTitleView;
 	private TextView net_work_tip;
 	private LinearLayout mActionsView;
 	private Button mHomeBtn, mRightBtn;
@@ -32,8 +32,6 @@ public class BuActionBar extends RelativeLayout implements OnClickListener {
 	private RelativeLayout top_bar_rl;
 	private LinearLayout error_bar;
 	private ImageView mProgress;
-
-	private ImageView actionbar_has_new;
 
 	public BuActionBar(Context context) {
 		this(context, null);
@@ -52,10 +50,9 @@ public class BuActionBar extends RelativeLayout implements OnClickListener {
 		mHomeBtn = (Button) findViewById(R.id.actionbar_home_btn);
 		mRightBtn = (Button) findViewById(R.id.actionbar_right_btn);
 		mProgress = (ImageView) findViewById(R.id.actionbar_progress_iv);
-		actionbar_has_new = (ImageView) findViewById(R.id.actionbar_has_new);
 
 		net_work_tip = (TextView) findViewById(R.id.net_work_tip);
-		mTitleView = (BuActionBarTitle) findViewById(R.id.actionbar_title);
+		mTitleView = (TextView) findViewById(R.id.actionbar_title);
 		mActionsView = (LinearLayout) findViewById(R.id.actionbar_actions);
 		if (null != attrs) {
 			TypedArray typeArray = context.obtainStyledAttributes(attrs, R.styleable.WM_ActionBar);
@@ -67,44 +64,10 @@ public class BuActionBar extends RelativeLayout implements OnClickListener {
 			}
 			typeArray.recycle();
 		}
-		setFilterNoHasNew();
 	}
 
-	public void setActionBarTitleListener(BuActionBarTitle.ActionBarTitleListener mViewCreatedListener) {
-		mTitleView.dismiss();
-		mTitleView.setActionBarTitleListener(mViewCreatedListener);
-	}
-
-	public void setBackground(int resid) {
-		top_bar_rl.setBackgroundResource(resid);
-	}
-
-	public void setHomeSplite(int dreaw) {
-		findViewById(R.id.home_split).setBackgroundResource(dreaw);
-	}
-
-	public void setDeskHasNew(boolean hasnew) {
-		actionbar_has_new.setVisibility(hasnew ? VISIBLE : GONE);
-	}
-
-	public BuActionBarTitle getTitleView() {
+	public TextView getTitleView() {
 		return mTitleView;
-	}
-
-	public void disFilterPopWin() {
-		mTitleView.dismiss();
-	}
-
-	public void setFilterHasNew() {
-		mTitleView.setHasNew();
-	}
-
-	public boolean isFilterHasNew() {
-		return mTitleView.isHasNew();
-	}
-
-	public void setFilterNoHasNew() {
-		mTitleView.setNoHasNew();
 	}
 
 	public void noNetwork() {
@@ -207,7 +170,6 @@ public class BuActionBar extends RelativeLayout implements OnClickListener {
 		if (tag instanceof Action) {
 			final Action action = (Action) tag;
 			action.performAction(view);
-			setDeskHasNew(false);
 		}
 	}
 

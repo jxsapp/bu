@@ -54,9 +54,6 @@ public abstract class BuActivity extends FragmentActivity implements LoadingMast
 					} else {
 						wmActionBar.noNetwork();
 					}
-					if (null != wmActionBar) {
-						checkStatusNext(wmActionBar.isFilterHasNew());
-					}
 				}
 				return mHandleMessage(msg);
 			}
@@ -149,10 +146,6 @@ public abstract class BuActivity extends FragmentActivity implements LoadingMast
 				mHandler.sendEmptyMessage(NET_WORK_ERROR);
 			}
 		}, 2000, 7000);
-	}
-
-	public void checkStatusNext(boolean currentHasNew) {
-
 	}
 
 	protected void hindErrorBar() {
