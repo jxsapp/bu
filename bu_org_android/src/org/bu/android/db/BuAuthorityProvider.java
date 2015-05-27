@@ -1,5 +1,7 @@
 package org.bu.android.db;
 
+import java.util.Locale;
+
 import org.bu.android.misc.BuStringUtils;
 
 import android.content.ContentProvider;
@@ -16,6 +18,7 @@ public abstract class BuAuthorityProvider extends ContentProvider implements BuA
 
 	private String tableName = "";
 	private String provider = "";
+	private String authority = "";
 
 	protected SQLiteOpenHelper dbHolder = null;
 	private final UriMatcher URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
@@ -23,17 +26,22 @@ public abstract class BuAuthorityProvider extends ContentProvider implements BuA
 	protected void initData() {
 		this.tableName = getTableName();
 		this.provider = getProvider();
-		URI_MATCHER.addURI(AUTHORITY + "." + getAuthority() + "." + provider, tableName + "/#", SINGLE);
-		URI_MATCHER.addURI(AUTHORITY + "." + getAuthority() + "." + provider, tableName, ALL);
+		this.authority = getAuthority();
+		URI_MATCHER.addURI(AUTHORITY + "." + authority + "." + provider, tableName + "/#", SINGLE);
+		URI_MATCHER.addURI(AUTHORITY + "." + authority + "." + provider, tableName, ALL);
 	}
 
 	public Uri getContentURI() {
-		return Uri.parse("content://" + AUTHORITY + "." + getAuthority() + "." + getProvider() + "/" + getTableName());
+		return Uri.parse("content://" + AUTHORITY + "." + authority + "." + provider + "/" + tableName);
 	}
 
 	protected abstract String getAuthority();
 
-	protected abstract String getProvider();
+	protected String getProvider() {
+		String simpleName = this.getClass().getSimpleName();
+		String frst = simpleName.substring(0, 1);
+		return simpleName.replace(frst, frst.toLowerCase(Locale.getDefault()));
+	}
 
 	protected abstract String getTableName();
 
