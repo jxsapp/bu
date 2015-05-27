@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/auto_size"
-    android:layout_width="100dip"
-    android:layout_height="100dip"
-    android:layout_gravity="center"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
     android:background="@drawable/bu_toast_bg"
     android:gravity="center"
-    android:orientation="vertical" >
-
-    <ImageView
-        android:id="@+id/ic_message"
-        style="@style/auto_size"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/Default_Padding_2x"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_item_ok"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/alert_message"
-        style="@style/auto_size"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/prompt_wait"
-        android:textColor="@color/white"
-        android:textSize="@dimen/BasicTextSize" />
-
-</LinearLayout>
+    android:padding="@dimen/Default_Padding_2x"
+    android:text="@string/prompt_loading"
+    android:textAppearance="?android:textAppearanceMedium"
+    android:textColor="@color/white"
+    android:textSize="@dimen/BasicTextSize"
+    android:textStyle="normal" />

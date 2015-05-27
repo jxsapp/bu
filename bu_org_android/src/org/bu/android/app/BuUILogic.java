@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
+import android.view.MotionEvent;
+import android.view.View;
 
-public abstract class BuUILogic<T, V> extends BuActyListener {
+public abstract class BuUILogic<T, V> extends BuActyListener implements View.OnTouchListener {
 	protected String TAG = "";
 	protected T mActivity;
 	protected V mViewHolder;
@@ -38,6 +40,11 @@ public abstract class BuUILogic<T, V> extends BuActyListener {
 	}
 
 	public boolean mHandleMessage(Message msg) {
+		return false;
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
 		return false;
 	}
 
