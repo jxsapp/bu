@@ -32,7 +32,7 @@ public abstract class BuAuthorityProvider extends ContentProvider implements BuA
 	}
 
 	public Uri getContentURI() {
-		return Uri.parse("content://" + AUTHORITY + "." + authority + "." + provider + "/" + tableName);
+		return Uri.parse("content://" + AUTHORITY + "." + getAuthority() + "." + getProvider() + "/" + getTableName());
 	}
 
 	protected abstract String getAuthority();
