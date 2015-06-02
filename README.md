@@ -13,6 +13,11 @@ Bu 一个Android开发的生产库，主要有以下几个部分构成：
 
   1.DataBase   --BuInfoDB,BuAuthorityProvider
       示例：
+      <!-- Provider -->
+        <provider
+            android:name="com.maiziji.android.asktask.db.UserInfoProvider"
+            android:authorities="org.bu.android.providers.mzj_at.userInfoProvider"
+            android:exported="false" />
       /**
  * 
  * the provider's stuff : BuAuthority.AUTHORITY.mzj
