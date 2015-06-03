@@ -5,23 +5,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 
-public abstract class BuAdapter<T, D> extends BaseAdapter {
+public abstract class BuAdapter<T, D> extends BaseAdapter implements Filterable {
+
+	protected List<D> datas = new ArrayList<D>();
+	protected BuItemViewHolder mViewHolder;
 
 	protected T mActivity;
 
-	protected List<D> datas = new ArrayList<D>();
-
 	public BuAdapter(T t, List<D> datas) {
-		super();
 		this.mActivity = new WeakReference<T>(t).get();
 		this.datas = datas;
+	}
+
+	private Object token = "";
+
+	public Object getToken() {
+		return token;
+	}
+
+	public void setToken(Object token) {
+		this.token = token;
+	}
+
+	public List<D> getDatas() {
+		return datas;
 	}
 
 	public void refresh(List<D> datas) {
 		this.datas = datas;
 		notifyDataSetChanged();
+	}
+
+	public void refresh(List<D> datas, boolean isFilter) {
+		refresh(datas);
 	}
 
 	public void appends(List<D> datas) {
@@ -54,16 +75,31 @@ public abstract class BuAdapter<T, D> extends BaseAdapter {
 		return position;
 	}
 
-	public abstract class ItemViewHolder {
+	public abstract class BuItemViewHolder {
 		protected View convertView;
 
-		protected ItemViewHolder(View convertView) {
+		protected BuItemViewHolder(View convertView) {
 			super();
 			this.convertView = convertView;
 		}
 
-		protected abstract void init(D d);
+		protected void init(D d) {
 
+		}
+
+		public void init(int position, D d) {
+
+		}
+
+		public void init(int position, D d, ViewGroup parent) {
+
+		}
+
+	}
+
+	@Override
+	public Filter getFilter() {
+		return null;
 	}
 
 }
