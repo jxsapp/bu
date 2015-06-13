@@ -99,7 +99,7 @@
 
     <!--  -->
     <color name="black_color">#ff333333</color>
-    <color name="round_line">#50d2d2d2</color>
+    <color name="round_line">#ffd5d5d5</color>
     <color name="toast_bg">#3f4245</color>
 
 </resources>

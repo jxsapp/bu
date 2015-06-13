@@ -228,7 +228,7 @@ public abstract class BuActivity extends FragmentActivity implements LoadingMast
 			BuToast.show("再按一次退出程序");
 			mHandler.sendEmptyMessageDelayed(_EXIT, 2000);
 		} else {
-			// LogoutHolder.logout4BackPresss();
+			finish();
 		}
 	}
 
